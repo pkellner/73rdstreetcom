@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Page not found" description="This page doesn't exist on 73rdstreet.com.">
+  <section class="band grid-bg">
+    <div class="wrap stack center">
+      <div class="signpost" style="width:min(100%,300px)" aria-hidden="true">
+        <span class="cap"></span>
+        <span class="pole"></span>
+        <span class="sign s1">Dead End</span>
+        <span class="sign s2">404 Ave</span>
+      </div>
+      <h1 class="h1 dot">Wrong turn</h1>
+      <p class="sub">There's no page at this address. Try one of these instead.</p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn btn--teal" href="/">Home</a>
+        <a class="btn" href="/services/">Services</a>
+        <a class="btn" href="/contact/">Contact</a>
+      </div>
+    </div>
+  </section>
+</Layout>

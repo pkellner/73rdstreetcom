@@ -1,0 +1,20 @@
+---
+import type { Color } from "../data/site";
+
+interface Props {
+  title: string;
+  sub?: string;
+  crumb: string;
+  color?: Color;
+}
+const { title, sub, crumb, color = "teal" } = Astro.props;
+---
+
+<section class={`band band--tight band--${color} grid-bg ph`}>
+  <span class="ph-sign" aria-hidden="true">73</span>
+  <div class="wrap ph-in">
+    <p class="crumb"><a href="/">73rdstreet.com</a> / {crumb}</p>
+    <h1 class="h1 dot">{title}</h1>
+    {sub && <p class="sub">{sub}</p>}
+  </div>
+</section>

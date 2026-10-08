@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHead from "../components/PageHead.astro";
+import Icon from "../components/Icon.astro";
+import { SITE } from "../data/site";
+
+const SUBJECTS = [
+  "Social Media Integration",
+  "Content Publishing Services",
+  "Custom Development",
+  "Technical Support",
+  "General Inquiry",
+];
+const mailto = (subject: string) => `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}`;
+---
+
+<Layout title="Contact" description="Contact 73rd Street Associates about social media integration, content publishing, or custom development." active="contact">
+  <PageHead
+    title="Contact us"
+    sub="Ready to discuss your technology needs? Get in touch with us today."
+    crumb="Contact"
+    color="teal"
+  />
+
+  <section class="band">
+    <div class="wrap split">
+      <div class="card rv">
+        <h2 class="h3" style="margin-bottom:18px">Contact information</h2>
+        <div class="stack">
+          <div style="display:flex;gap:14px">
+            <span class="plate" style="--c:var(--teal);margin:0;flex:none"><Icon name="user" /></span>
+            <div><b>{SITE.principal}</b><p>Principal &amp; Founder</p></div>
+          </div>
+          <div style="display:flex;gap:14px">
+            <span class="plate" style="--c:var(--violet);margin:0;flex:none"><Icon name="mail" /></span>
+            <div><b>Email</b><p><a class="link" href={`mailto:${SITE.email}`}>{SITE.email}</a></p></div>
+          </div>
+          <div style="display:flex;gap:14px">
+            <span class="plate" style="--c:var(--berry);margin:0;flex:none"><Icon name="pin" /></span>
+            <div><b>Address</b><address class="addr muted">{SITE.legalName}<br />{SITE.address[0]}<br />{SITE.address[1]}</address></div>
+          </div>
+          <div style="display:flex;gap:14px">
+            <span class="plate" style="--c:var(--gold);--oc:var(--on-gold);margin:0;flex:none"><Icon name="globe" /></span>
+            <div><b>Website</b><p><a class="link" href={SITE.principalSite}>peterkellner.net</a></p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack">
+        <div class="card rv">
+          <h2 class="h3">Send us a message</h2>
+          <p style="margin-top:6px">Pick a topic to open an email to <b>{SITE.email}</b>. Please include your name, company, and a few lines about what you need.</p>
+          <div class="chips" style="margin-top:16px">
+            {SUBJECTS.map((s) => <a class="btn btn--sm" href={mailto(s)}>{s}</a>)}
+          </div>
+          <div class="cta" style="margin-top:22px">
+            <a class="btn btn--teal" href={mailto("Inquiry from 73rdstreet.com")}><Icon name="mail" /> Email us</a>
+          </div>
+        </div>
+        <div class="card rv">
+          <span class="plate" style="--c:var(--violet)"><Icon name="clock" /></span>
+          <h2 class="h3">Business hours</h2>
+          <p>Monday - Friday: 9:00 AM - 5:00 PM PST<br />Saturday - Sunday: By appointment</p>
+          <p style="margin-top:10px">We typically respond to inquiries within 24 business hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

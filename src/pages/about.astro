@@ -1,0 +1,102 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHead from "../components/PageHead.astro";
+import Icon from "../components/Icon.astro";
+import { SITE, TIMELINE, BUILT, MISSION } from "../data/site";
+---
+
+<Layout title="About" description="73rd Street Associates, Inc.: founded in 1985, a California corporation since 1991, led by Peter Kellner." active="about">
+  <PageHead
+    title="About 73rd Street Associates"
+    sub="Founded in 1985 and incorporated in California in 1991, 73rd Street Associates has been building reliable, secure software for four decades."
+    crumb="About"
+    color="violet"
+  />
+
+  <section class="band">
+    <div class="wrap split split--wide">
+      <div class="stack">
+        <h2 class="h2 dot rv">Our story</h2>
+        <p class="sub rv">
+          73rd Street Associates has been at the forefront of technology for four decades. As a
+          California corporation, we've built our reputation on delivering reliable, secure, and
+          innovative software solutions to businesses and individuals alike.
+        </p>
+        <p class="sub rv">
+          Our journey began with custom software for healthcare: clinic scheduling, insurance company
+          management and a turnkey physician office system used by more than 500 customers nationwide.
+          After that business was sold in 2000, the company turned to web technologies and now
+          specializes in social media platform integration. We understand the complexities of modern
+          digital marketing and content management, and we're here to simplify them for our clients.
+        </p>
+        <ol class="tl" style="margin-top:12px">
+          {TIMELINE.map((t) => (
+            <li class="rv" style={`--c:var(--${t.color});--oc:var(--on-${t.color})`}>
+              <span class="when">{t.when}</span>
+              <div class="card">
+                <h3 class="h3">{t.title}</h3>
+                <p>{t.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <aside class="stack">
+        <div class="card rv">
+          <span class="plate" style="--c:var(--teal)"><Icon name="user" /></span>
+          <p class="kicker">Leadership</p>
+          <h3 class="h3" style="margin-top:6px">{SITE.principal}</h3>
+          <p class="muted" style="font-weight:700">Principal &amp; Founder</p>
+          <p style="margin-top:10px">
+            With four decades of experience in software development and technology services, Peter Kellner
+            has led 73rd Street Associates from its inception. His expertise spans multiple programming
+            languages, platforms, and frameworks, with a particular focus on web technologies and API
+            integrations.
+          </p>
+          <ul class="ticks" style="--c:var(--teal)">
+            <li><a class="link" href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+            <li><a class="link" href={SITE.principalSite}>peterkellner.net</a></li>
+          </ul>
+        </div>
+        <div class="card rv">
+          <p class="kicker">1985–2000</p>
+          <h3 class="h3" style="margin-top:6px">What 73rd Street built</h3>
+          <ul class="ticks" style="--c:var(--gold)">
+            {BUILT.map((b) => <li>{b}</li>)}
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="band band--2">
+    <div class="wrap">
+      <div class="head rv">
+        <div>
+          <h2 class="h2 dot">Our mission</h2>
+          <p class="sub">
+            To empower businesses and individuals with technology solutions that streamline their digital
+            presence and content management workflows. We believe in:
+          </p>
+        </div>
+      </div>
+      <div class="cards cards--3">
+        {MISSION.map((m, i) => (
+          <article class="card rv">
+            <span class="plate" style={`--c:var(--${m.color})`}><Icon name={["lock", "shield", "star"][i]} /></span>
+            <h3 class="h3">{m.title}</h3>
+            <p>{m.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--teal grid-bg">
+    <div class="wrap stack center rv">
+      <h2 class="h2 dot">Ready to work together</h2>
+      <p class="sub">Let's discuss how we can help with your technology needs.</p>
+      <div class="cta"><a class="btn" href="/contact/">Get in Touch <Icon name="arrow" /></a></div>
+    </div>
+  </section>
+</Layout>

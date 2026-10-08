@@ -1,0 +1,27 @@
+---
+import Layout from "./Layout.astro";
+import PageHead from "../components/PageHead.astro";
+import { SITE, type Color } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  crumb: string;
+  color?: Color;
+  dateLabel?: string;
+}
+const { title, description, heading, crumb, color = "violet", dateLabel } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <PageHead title={heading} crumb={crumb} color={color} />
+  <section class="band">
+    <div class="wrap narrow">
+      <article class="card prose">
+        {dateLabel && <p class="updated"><strong>{dateLabel}:</strong> {SITE.legalUpdated}</p>}
+        <slot />
+      </article>
+    </div>
+  </section>
+</Layout>

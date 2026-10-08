@@ -1,0 +1,103 @@
+---
+import Legal from "../layouts/Legal.astro";
+import { SITE } from "../data/site";
+
+const LEVELS = [
+  { n: "1. Correction", c: "gold", impact: "Minor violation or inappropriate behavior.", consequence: "Private written warning with clarity on the violation." },
+  { n: "2. Warning", c: "teal", impact: "A violation through a single incident or series of actions.", consequence: "Warning with consequences for continued behavior, including restricted interaction." },
+  { n: "3. Temporary Ban", c: "violet", impact: "Serious violation of community standards.", consequence: "Temporary ban from interaction with the community." },
+  { n: "4. Permanent Ban", c: "berry", impact: "Pattern of violations or severe breach of standards.", consequence: "Permanent ban from all community interaction." },
+];
+---
+
+<Legal
+  title="Code of Conduct"
+  description="Code of Conduct for 73rd Street Associates community and services, promoting a respectful and inclusive environment."
+  heading="Code of Conduct"
+  crumb="Code of Conduct"
+  color="gold"
+>
+  <section>
+    <h2>Our Pledge</h2>
+    <p>
+      We at 73rd Street Associates pledge to make participation in our community and services a harassment-free
+      experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level
+      of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+    </p>
+  </section>
+
+  <section>
+    <h2>Our Standards</h2>
+    <h3>Examples of Positive Behavior</h3>
+    <ul class="ticks" style="--c:var(--teal)">
+      <li>Demonstrating empathy and kindness toward others</li>
+      <li>Being respectful of differing opinions, viewpoints, and experiences</li>
+      <li>Giving and gracefully accepting constructive feedback</li>
+      <li>Accepting responsibility and apologizing for mistakes</li>
+      <li>Focusing on what is best for the community</li>
+    </ul>
+    <h3>Examples of Unacceptable Behavior</h3>
+    <ul class="ticks ticks--no">
+      <li>Use of sexualized language or imagery</li>
+      <li>Trolling, insulting or derogatory comments, and personal attacks</li>
+      <li>Public or private harassment</li>
+      <li>Publishing others' private information without permission</li>
+      <li>Other conduct which could reasonably be considered inappropriate</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Content Guidelines</h2>
+    <p>When using our services to publish content, ensure that:</p>
+    <ul class="ticks">
+      <li>Content is appropriate for all audiences</li>
+      <li>You have proper rights and licenses for all content</li>
+      <li>Content respects individual privacy and consent</li>
+      <li>Information shared is truthful and not misleading</li>
+      <li>Content does not discriminate or promote hatred</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Enforcement</h2>
+    <div class="steps">
+      {LEVELS.map((l) => (
+        <div class="note note--plain" style={`border-left:10px solid var(--${l.c})`}>
+          <h3>{l.n}</h3>
+          <p><strong>Community Impact:</strong> {l.impact}</p>
+          <p><strong>Consequence:</strong> {l.consequence}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2>Reporting</h2>
+    <p>Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to our team at:</p>
+    <div class="note note--plain">
+      <p><strong>Email:</strong> <a href={`mailto:${SITE.privacyEmail}`}>{SITE.privacyEmail}</a></p>
+    </div>
+    <p>
+      All complaints will be reviewed and investigated promptly and fairly. We are committed to respecting the privacy
+      and security of the reporter.
+    </p>
+  </section>
+
+  <section>
+    <h2>Scope</h2>
+    <p>
+      This Code of Conduct applies to all 73rd Street Associates spaces, including our services, applications, and
+      communications. It also applies when an individual is officially representing 73rd Street Associates in public
+      spaces.
+    </p>
+  </section>
+
+  <section>
+    <h2>Attribution</h2>
+    <p>
+      This Code of Conduct is adapted from the
+      <a href="https://www.contributor-covenant.org/" target="_blank" rel="noopener noreferrer">Contributor Covenant</a>,
+      version 2.1.
+    </p>
+  </section>
+</Legal>

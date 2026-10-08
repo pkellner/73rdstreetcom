@@ -1,0 +1,117 @@
+---
+import Legal from "../layouts/Legal.astro";
+import { SITE } from "../data/site";
+---
+
+<Legal
+  title="Data Deletion"
+  description="Instructions for requesting deletion of your data from 73rd Street Associates applications and services."
+  heading="Data Deletion Instructions"
+  crumb="Data Deletion"
+  color="berry"
+  dateLabel="Last updated"
+>
+  <section>
+    <h2>Your Right to Data Deletion</h2>
+    <p>
+      Apps by 73rd Street Associates, Inc. may request limited access to your Facebook or Instagram account. You have
+      complete control over your data and can request its deletion at any time.
+    </p>
+  </section>
+
+  <section>
+    <h2>How to Delete Your Data</h2>
+    <div class="steps">
+      <div class="note" style="--c:var(--surface)">
+        <h3>Option 1: Remove App from Facebook/Instagram</h3>
+        <p>This immediately stops our access to your account and initiates data deletion:</p>
+        <ol>
+          <li>Go to Facebook Settings</li>
+          <li>Navigate to "Apps and Websites"</li>
+          <li>Find our app in the list</li>
+          <li>Click "Remove" to revoke access</li>
+        </ol>
+        <p>This stops our access immediately and we will delete all associated data within 7 business days.</p>
+      </div>
+      <div class="note" style="--c:var(--surface)">
+        <h3>Option 2: Email Request</h3>
+        <p>Send a data deletion request directly to us:</p>
+        <p>
+          <strong>Email:</strong>
+          <a href={`mailto:${SITE.privacyEmail}?subject=Data%20Deletion%20Request`}>{SITE.privacyEmail}</a>
+        </p>
+        <p><strong>Subject Line:</strong> "Data Deletion Request"</p>
+        <p><strong>Include:</strong> Your name and the email associated with your account</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What Happens After You Request Deletion</h2>
+    <ul class="ticks" style="--c:var(--teal)">
+      <li>We immediately stop accessing your Facebook/Instagram data</li>
+      <li>All your data is removed from our systems within 7 business days</li>
+      <li>You receive confirmation when deletion is complete (if email provided)</li>
+      <li>No data is retained after the deletion process is complete</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What Data We Delete</h2>
+    <p>When you request data deletion, we remove:</p>
+    <ul class="ticks">
+      <li>All access tokens and authentication credentials</li>
+      <li>Your profile information obtained from Meta platforms</li>
+      <li>Content you've published through our services</li>
+      <li>Analytics and engagement data we've collected</li>
+      <li>Any scheduled posts or automation settings</li>
+      <li>All associated metadata and logs</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>App-Specific Deletion Pages</h2>
+    <p>Each of our applications has its own specific data deletion page with detailed instructions:</p>
+    <div class="note note--plain">
+      <p>
+        <strong>Example:</strong>
+        <a href="https://photos.connectionroad.com/data-deletion" target="_blank" rel="noopener noreferrer">https://photos.connectionroad.com/data-deletion</a>
+      </p>
+      <p>Visit the specific deletion page for your app for more detailed instructions.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <details open>
+        <summary>How long does data deletion take?</summary>
+        <p>We process all deletion requests within 7 business days of receipt.</p>
+      </details>
+      <details>
+        <summary>Can I get my data back after deletion?</summary>
+        <p>No, once data is deleted it cannot be recovered. You would need to re-authorize our app and start fresh.</p>
+      </details>
+      <details>
+        <summary>Will deletion affect my Facebook/Instagram account?</summary>
+        <p>No, deletion only removes data from our systems. Your Facebook/Instagram accounts remain unchanged.</p>
+      </details>
+      <details>
+        <summary>Do you keep any data after deletion?</summary>
+        <p>
+          No, we completely remove all data associated with your account. We may retain anonymized, aggregated
+          statistics that cannot be linked to you.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <section>
+    <div class="note" style="--c:var(--teal);color:#fff">
+      <h2 style="color:#fff">Need Help?</h2>
+      <p>If you have questions about data deletion or need assistance, please contact us:</p>
+      <p><strong style="color:#fff">Email:</strong> <a style="color:#fff" href={`mailto:${SITE.privacyEmail}`}>{SITE.privacyEmail}</a></p>
+      <p><strong style="color:#fff">Phone:</strong> <a style="color:#fff" href={SITE.phoneHref}>{SITE.phone}</a></p>
+    </div>
+  </section>
+</Legal>

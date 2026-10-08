@@ -1,0 +1,132 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import { WHY, CAPABILITIES, TIMELINE } from "../data/site";
+
+const RIBBON = [
+  { t: "Social media integration", c: "teal" },
+  { t: "Content publishing", c: "violet" },
+  { t: "Custom applications", c: "berry" },
+  { t: "API design", c: "gold" },
+  { t: "Analytics & reporting", c: "teal" },
+  { t: "Cloud deployment", c: "violet" },
+  { t: "Since 1985", c: "berry" },
+];
+---
+
+<Layout active="home">
+  <section class="band hero grid-bg">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <div class="chips">
+          <span class="chip chip--teal">Since 1985</span>
+          <span class="chip">California corporation</span>
+          <span class="chip chip--violet">Meta API integration</span>
+        </div>
+        <h1 class="h1">Technology <em>solutions</em> since <u>1985</u><span style="color:var(--berry)">.</span></h1>
+        <p class="lede">
+          Professional technology and software development services specializing in
+          <b>social media integration</b> for content publishing, analytics, and management.
+        </p>
+        <div class="cta">
+          <a class="btn btn--teal" href="/services/">Our Services <Icon name="arrow" /></a>
+          <a class="btn" href="/contact/">Get in Touch</a>
+        </div>
+      </div>
+      <div class="signpost" aria-hidden="true">
+        <span class="cap"></span>
+        <span class="pole"></span>
+        <span class="sign s1">73rd Street<small>Est. 1985</small></span>
+        <span class="sign s2">Integration Ave<small>APIs · publishing</small></span>
+        <span class="sign s3">Software Way<small>Web · cloud · data</small></span>
+        <span class="sign s4">Borrego Springs, CA</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon-track">
+      {[...RIBBON, ...RIBBON].map((r) => <span style={`--c:var(--${r.c})`}>{r.t}</span>)}
+    </div>
+  </div>
+
+  <section class="band band--2">
+    <div class="wrap">
+      <div class="head rv">
+        <div>
+          <p class="kicker">Why us</p>
+          <h2 class="h2 dot">Why choose 73rd Street Associates</h2>
+          <p class="sub">
+            With four decades of experience, we provide technology solutions that help businesses
+            automate their social media presence and streamline their digital operations.
+          </p>
+        </div>
+      </div>
+      <div class="cards cards--3">
+        {WHY.map((w) => (
+          <article class="card rv">
+            <span class="plate" style={`--c:var(--${w.color});--oc:var(--on-${w.color})`}><Icon name={w.icon} /></span>
+            <h3 class="h3">{w.title}</h3>
+            <p>{w.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head rv">
+        <div>
+          <p class="kicker">What we do</p>
+          <h2 class="h2 dot">Our capabilities</h2>
+        </div>
+        <a class="btn btn--sm btn--violet" href="/services/">All services <Icon name="arrow" /></a>
+      </div>
+      <div class="cards cards--2">
+        {CAPABILITIES.map((c) => (
+          <article class="card rv" style={`--c:var(--${c.color})`}>
+            <h3 class="h3">{c.title}</h3>
+            <ul class="ticks">
+              {c.items.map((i) => <li>{i}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--ink grid-bg">
+    <div class="wrap split">
+      <div class="stack rv">
+        <p class="kicker" style="color:var(--on-ink-2)">Four decades on one street</p>
+        <h2 class="h2">Built to last<span style="color:var(--gold)">.</span></h2>
+        <p class="sub">
+          From clinic scheduling and insurance claims in the 1980s to platform APIs today,
+          the same principal has run 73rd Street Associates from day one.
+        </p>
+        <div class="stats">
+          <div class="stat" style="--c:var(--gold)"><b>1985</b><span>Founded</span></div>
+          <div class="stat" style="--c:#5fd3c9"><b>500+</b><span>Healthcare customers served</span></div>
+        </div>
+        <div><a class="btn btn--gold" href="/about/">Our story <Icon name="arrow" /></a></div>
+      </div>
+      <ol class="tl rv">
+        {TIMELINE.slice().reverse().map((t) => (
+          <li style={`--c:var(--${t.color});--oc:var(--on-${t.color})`}>
+            <span class="when">{t.when}</span>
+            <div class="card"><h3 class="h3">{t.title}</h3></div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="band band--berry grid-bg">
+    <div class="wrap stack center rv">
+      <h2 class="h2 dot">Ready to get started</h2>
+      <p class="sub">Let us help you integrate with social media APIs and automate your content publishing workflow.</p>
+      <div class="cta"><a class="btn" href="/contact/">Contact Us Today <Icon name="arrow" /></a></div>
+    </div>
+  </section>
+</Layout>

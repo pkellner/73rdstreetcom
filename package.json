@@ -1,0 +1,24 @@
+{
+  "name": "73rdstreetcom",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "73rdstreet.com, the site for 73rd Street Associates, Inc.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "test:dist": "node scripts/check-dist.mjs",
+    "verify": "npm run build && npm run test:dist",
+    "images": "node scripts/render-images.mjs"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.8",
+    "typescript": "~6.0.3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

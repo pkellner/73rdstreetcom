@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHead from "../components/PageHead.astro";
+import Icon from "../components/Icon.astro";
+import { SERVICES, USE_CASES } from "../data/site";
+---
+
+<Layout
+  title="Services"
+  description="Technology services from 73rd Street Associates: social media integration, custom application development, content publishing automation, and analytics."
+  active="services"
+>
+  <PageHead
+    title="Our services"
+    sub="We provide comprehensive technology solutions tailored to your business needs."
+    crumb="Services"
+    color="berry"
+  />
+
+  <section class="band">
+    <div class="wrap">
+      <div class="cards cards--2">
+        {SERVICES.map((s) => (
+          <article class="card rv" style={`--c:var(--${s.color})`}>
+            <span class="plate" style={`--c:var(--${s.color});--oc:var(--on-${s.color})`}><Icon name={s.icon} /></span>
+            <h2 class="h3">{s.title}</h2>
+            <p>{s.text}</p>
+            <ul class="ticks">
+              {s.items.map((i) => <li>{i}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--2">
+    <div class="wrap">
+      <div class="head rv">
+        <div>
+          <h2 class="h2 dot">Example use cases</h2>
+        </div>
+      </div>
+      <div class="cards cards--2">
+        {USE_CASES.map((u) => (
+          <article class="card rv">
+            <h3 class="h3">{u.title}</h3>
+            <p>{u.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--violet grid-bg">
+    <div class="wrap stack center rv">
+      <p class="kicker" style="color:rgba(255,255,255,.8)">Coming next</p>
+      <h2 class="h2 dot">Future offerings</h2>
+      <p class="sub">
+        We're developing consumer applications for the App Store and Google Play that will bring these
+        powerful features directly to individual users, allowing them to manage their personal social
+        media accounts with professional-grade tools.
+      </p>
+      <div class="cta"><a class="btn" href="/contact/">Talk to us about a project <Icon name="arrow" /></a></div>
+    </div>
+  </section>
+</Layout>

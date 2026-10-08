@@ -1,0 +1,43 @@
+---
+import { SITE, NAV, LEGAL } from "../data/site";
+const year = new Date().getFullYear();
+---
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-big" aria-hidden="true">
+      73rd Street<span class="fw-d">.</span>
+      <small>Technology and software development services since 1985.</small>
+    </p>
+    <div class="foot-cols">
+      <div>
+        <h4>{SITE.name}</h4>
+        <p>Technology and software development services since 1985. Specializing in content publishing and management.</p>
+      </div>
+      <div>
+        <h4>Quick links</h4>
+        <ul>
+          {NAV.filter((n) => n.key !== "home").map((n) => <li><a href={n.href}>{n.label === "About" ? "About Us" : n.label}</a></li>)}
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          {LEGAL.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <address>
+          {SITE.principal}, Principal<br />
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a><br />
+          {SITE.address.join(", ")}
+        </address>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© {year} {SITE.legalName} All rights reserved.</span>
+      <span>California Corporation · Founded 1985</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,118 @@
+---
+import Legal from "../layouts/Legal.astro";
+import ContactBlock from "../components/ContactBlock.astro";
+import { SITE } from "../data/site";
+---
+
+<Legal
+  title="Privacy Policy"
+  description="Privacy policy for 73rd Street Associates, detailing our data collection, usage, security measures, and your rights regarding personal information."
+  heading="Privacy Policy"
+  crumb="Privacy Policy"
+  dateLabel="Last updated"
+>
+  <section>
+    <h2>Introduction</h2>
+    <p>
+      73rd Street Associates, Inc. ("we", "our", "us") provides applications and services that may connect to
+      Facebook, Instagram, and other platforms. This privacy policy explains how we collect, use, and protect your
+      information.
+    </p>
+  </section>
+
+  <section>
+    <h2>Information We Collect</h2>
+    <ul class="ticks">
+      <li><strong>Information provided directly:</strong> Data you provide when using our services, including account information, content you wish to publish, and communication preferences.</li>
+      <li><strong>Platform Data from Meta APIs:</strong> Limited to permissions like publish_video and related scopes, accessed only with your explicit authorization.</li>
+      <li><strong>Usage Information:</strong> Basic analytics about how you interact with our services to improve functionality.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How We Use Information</h2>
+    <p>We use collected information exclusively for:</p>
+    <ul class="ticks">
+      <li>Enabling clients and users to publish photos and videos with captions to their accounts, including personal Pages</li>
+      <li>Providing analytics and reporting back to account owners</li>
+      <li>Facilitating engagement features such as reading or replying to comments</li>
+      <li>Improving our services and developing new features</li>
+    </ul>
+    <div class="note note--berry">
+      <p><strong>Important: We do not resell or use data outside of these specified uses.</strong></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Data Security</h2>
+    <p>We implement comprehensive security measures to protect your data:</p>
+    <ul class="ticks" style="--c:var(--teal)">
+      <li>TLS encryption for all data in transit</li>
+      <li>Encryption at rest for stored data</li>
+      <li>Restricted access with multi-factor authentication (MFA)</li>
+      <li>Regular security audits and updates</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Data Retention</h2>
+    <p>Our data retention practices ensure minimal data storage:</p>
+    <ul class="ticks">
+      <li>Data is kept only for as long as required to provide the service</li>
+      <li>Automatic deletion when the service ends or authorization is revoked</li>
+      <li>Immediate deletion available upon request</li>
+      <li>All deletion requests processed within 7 business days</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Data Deletion</h2>
+    <p>You have complete control over your data. To delete your data:</p>
+    <ol>
+      <li>Remove our app from your Facebook/Instagram settings (Settings → Apps and Websites)</li>
+      <li>
+        Or email us at <a href={`mailto:${SITE.privacyEmail}`}>{SITE.privacyEmail}</a> with the subject line "Data
+        Deletion Request"
+      </li>
+    </ol>
+    <p>
+      Each app includes specific data deletion instructions. Example:
+      <a href="https://photos.connectionroad.com/data-deletion" target="_blank" rel="noopener noreferrer">https://photos.connectionroad.com/data-deletion</a>
+    </p>
+    <p>Full instructions are on our <a href="/data-deletion/">Data Deletion</a> page.</p>
+  </section>
+
+  <section>
+    <h2>Your Rights</h2>
+    <p>You have the following rights regarding your personal information:</p>
+    <ul class="ticks">
+      <li><strong>Access:</strong> Request a copy of the data we hold about you</li>
+      <li><strong>Correction:</strong> Request corrections to inaccurate data</li>
+      <li><strong>Deletion:</strong> Request deletion of your data at any time</li>
+      <li><strong>Portability:</strong> Receive your data in a portable format</li>
+      <li><strong>Withdraw Consent:</strong> Revoke permissions at any time through platform settings</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Children's Privacy</h2>
+    <p>
+      Our services are not directed to individuals under the age of 13. We do not knowingly collect personal
+      information from children under 13. If we become aware that we have collected personal information from a child
+      under 13, we will take steps to delete such information.
+    </p>
+  </section>
+
+  <section>
+    <h2>Changes to This Policy</h2>
+    <p>
+      We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy
+      policy on this page and updating the "Last updated" date.
+    </p>
+  </section>
+
+  <section>
+    <h2>Contact Information</h2>
+    <ContactBlock />
+  </section>
+</Legal>
