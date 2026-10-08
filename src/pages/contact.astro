@@ -37,7 +37,7 @@ const mailto = (subject: string) => `mailto:${SITE.email}?subject=${encodeURICom
           </div>
           <div style="display:flex;gap:14px">
             <span class="plate" style="--c:var(--berry);margin:0;flex:none"><Icon name="pin" /></span>
-            <div><b>Address</b><address class="addr muted">{SITE.legalName}<br />{SITE.address[0]}<br />{SITE.address[1]}</address></div>
+            <div><b>Location</b><p>{SITE.location}</p></div>
           </div>
           <div style="display:flex;gap:14px">
             <span class="plate" style="--c:var(--gold);--oc:var(--on-gold);margin:0;flex:none"><Icon name="globe" /></span>

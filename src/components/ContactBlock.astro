@@ -4,6 +4,6 @@ import { SITE } from "../data/site";
 
 <div class="note note--plain">
   <p><strong>{SITE.legalName}</strong></p>
-  <address class="addr">{SITE.address[0]}<br />{SITE.address[1]}</address>
+  <p>{SITE.location}</p>
   <p>Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
 </div>

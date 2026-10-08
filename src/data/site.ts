@@ -11,7 +11,7 @@ export const SITE = {
   privacyEmail: "peter@peterkellner.net",
   phone: "+1-408-234-1385",
   phoneHref: "tel:+14082341385",
-  address: ["#221", "Borrego Springs, CA 92004, USA"],
+  location: "Borrego Springs, CA",
   principal: "Peter Kellner",
   principalSite: "https://peterkellner.net",
   // Fixed date for the legal pages; change it whenever their text changes.
