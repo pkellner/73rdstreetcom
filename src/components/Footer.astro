@@ -29,7 +29,7 @@ const year = new Date().getFullYear();
       <div>
         <h4>Contact</h4>
         <address>
-          {SITE.principal}, Principal<br />
+          <a href={SITE.principalSite}>{SITE.principal}</a>, Principal<br />
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a><br />
           {SITE.location}
         </address>
@@ -37,7 +37,7 @@ const year = new Date().getFullYear();
     </div>
     <div class="foot-bot">
       <span>© {year} {SITE.legalName} All rights reserved.</span>
-      <span>California Corporation · Founded 1985</span>
+      <span>California Corporation · Founded 1985 · <a class="foot-pk" href={SITE.principalSite}>peterkellner.net ↗</a></span>
     </div>
   </div>
 </footer>

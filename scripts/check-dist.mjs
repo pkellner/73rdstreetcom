@@ -53,6 +53,11 @@ for (const [route, needles] of Object.entries(must)) {
   for (const n of needles) if (!html.includes(n)) fail(`${route}: missing "${n}"`);
 }
 
+for (const [route, file] of Object.entries(PAGES)) {
+  const p = join(dist, file);
+  if (existsSync(p) && !readFileSync(p, "utf8").includes(`href="https://peterkellner.net"`)) fail(`${route}: no link to peterkellner.net`);
+}
+
 for (const f of ["404.html", "og.png", "logo.png", "favicon.svg", "favicon-32.png", "apple-touch-icon.png", "sitemap-index.xml"]) {
   if (!existsSync(join(dist, f))) fail(`missing ${f}`);
 }

@@ -315,6 +315,8 @@ h1, h2, h3, h4 { font-family: var(--display); font-stretch: 112%; letter-spacing
 .foot-cols a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .foot-cols p, .foot-cols address { color: var(--on-ink-2); font-style: normal; }
 .foot-bot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 36px; padding-top: 20px; border-top: 2px solid var(--ink-line); font: 500 0.78rem/1.5 var(--mono); color: var(--on-ink-2); }
+.foot-bot a { color: var(--on-ink); text-decoration: underline; text-decoration-color: var(--berry); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.foot-bot a:hover { color: #fff; }
 @media (max-width: 860px) { .foot-cols { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .foot-cols { grid-template-columns: 1fr; } }
 
